@@ -6,5 +6,12 @@ def init_state(secret: str, max_tries: int) -> dict:
     game_info["guessed"] = []
     game_info["wrong_guesses"] = None
     game_info["max_tries"] = max_tries
-
     return  game_info
+
+def validate_guess(ch: str, guesses: list[str]) -> tuple[bool, str]:
+    if len(ch) == 1 and ch.isalpha() and ch not in guesses:
+        return True, ch
+    return False, ch
+
+
+
