@@ -34,7 +34,9 @@ def render_display(state: dict) -> str:
     display = state["display"]
     return display
 
-def render_summary(state: dict) -> str:
-    summary = state["guessed"]
+def render_summary(state: dict) -> list[str]:
+    summary = []
+    summary.append(state["secret"])
+    summary.append(state["guessed"][:])
     return summary
 
