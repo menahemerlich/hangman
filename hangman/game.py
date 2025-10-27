@@ -12,16 +12,17 @@ def init_state(secret: str, max_tries: int) -> dict:
 def validate_guess(ch: str, guesses: list[str]) -> tuple[bool, str]:
     if len(ch) == 1 and ch.isalpha() and ch not in guesses:
         return True, ch
+    print("The input is incorrect.")
     return False, ch
 
 def apply_guess(state: dict, ch: str):
-    i = -1
     if ch in state["secret"]:
-        for j in state["secret"]:
-            i += 1
+        index_ch = []
+        for i, j in  enumerate(state["secret"]):
             if ch == j:
-                state["display"][i] = ch
-
+                index_ch.append(i)
+        for i in index_ch:
+            state["display"][i] = ch
         return True
     state["guessed"].append(ch)
     state["wrong_guesses"] += 1
