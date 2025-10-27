@@ -1,7 +1,7 @@
 from data.words_list import words
 from hangman.words import choose_secret_word
 from hangman.game import init_state, validate_guess, apply_guess, is_won, is_lost, render_display, render_summary
-from hangman.io import prompt_guess
+from hangman.io import prompt_guess, print_status
 
 ch = prompt_guess()
 state = init_state(choose_secret_word(words), max_tries=5)
@@ -9,7 +9,8 @@ validate_guess(ch, state["guessed"])
 print(state)
 print(apply_guess(state, ch))
 print(state)
-print(is_won(state))
-print(is_lost(state))
+# print(is_won(state))
+# print(is_lost(state))
 print(render_display(state))
-print(render_summary(state))
+# print(render_summary(state))
+print_status(state)
