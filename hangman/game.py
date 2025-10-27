@@ -30,3 +30,7 @@ def is_lost(state: dict) -> bool:
         return True
     return False
 
+def render_display(state: dict) -> str:
+    display = state["display"]
+    return display
+
