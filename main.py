@@ -1,10 +1,9 @@
 from data.words_list import words
 from hangman.words import choose_secret_word
 from hangman.game import init_state, validate_guess, apply_guess, is_won, is_lost, render_display, render_summary
+from hangman.io import prompt_guess
 
-
-
-ch = input("Enter a ch: ")
+ch = prompt_guess()
 state = init_state(choose_secret_word(words), max_tries=5)
 validate_guess(ch, state["guessed"])
 print(state)
