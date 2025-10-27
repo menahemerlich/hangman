@@ -18,7 +18,6 @@ def apply_guess(state: dict, ch: str) -> bool:
         return False
     state["guessed"].append(ch)
     state["wrong_guesses"] += 1
-    state["max_tries"] -= 1
     return True
 
 def is_won(state: dict) -> bool:
@@ -26,5 +25,8 @@ def is_won(state: dict) -> bool:
         return False
     return True
 
-
+def is_lost(state: dict) -> bool:
+    if state["wrong_guesses"] >= state["max_tries"]:
+        return True
+    return False
 
