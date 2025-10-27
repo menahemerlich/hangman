@@ -17,13 +17,9 @@ def validate_guess(ch: str, guesses: list[str]) -> tuple[bool, str]:
 
 def apply_guess(state: dict, ch: str):
     if ch in state["secret"]:
-        index_ch = []
-        for i, j in  enumerate(state["secret"]):
-            if ch == j:
-                index_ch.append(i)
-        for i in index_ch:
-            state["display"][i] = ch
-        state["guessed"].append(ch)
+        for i in range(len(state["secret"])):
+            if state["secret"][i] == ch:
+                state["display"][i] = ch
         return True
     state["guessed"].append(ch)
     state["wrong_guesses"] += 1
