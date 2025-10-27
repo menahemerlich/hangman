@@ -23,6 +23,7 @@ def apply_guess(state: dict, ch: str):
                 index_ch.append(i)
         for i in index_ch:
             state["display"][i] = ch
+        state["guessed"].append(ch)
         return True
     state["guessed"].append(ch)
     state["wrong_guesses"] += 1
