@@ -34,3 +34,7 @@ def render_display(state: dict) -> str:
     display = state["display"]
     return display
 
+def render_summary(state: dict) -> str:
+    summary = state["guessed"]
+    return summary
+
