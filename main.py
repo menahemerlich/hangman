@@ -19,15 +19,4 @@ def play() -> None:
 
 play()
 
-# ch = prompt_guess()
-#state = init_state(choose_secret_word(words), max_tries=5)
-# validate_guess(ch, state["guessed"])
-# print(state)
-# print(apply_guess(state, ch))
-# print(state)
-# # print(is_won(state))
-# # print(is_lost(state))
-# print(render_display(state))
-# # print(render_summary(state))
-# print_status(state)
-#print(state["secret"][0])
+
