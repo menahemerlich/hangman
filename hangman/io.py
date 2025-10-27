@@ -5,9 +5,9 @@ def prompt_guess() -> str:
     return ch
 
 def print_status(state: dict) -> None:
-    print(f"Your word status: {render_display(state)}")
     print(f"Your failed guesses: {state["guessed"]}")
     print(f"You have left {state["max_tries"] - state["wrong_guesses"]} guesses")
+    print(f"Your word status: {render_display(state)}")
 
 def print_result(state: dict) -> None:
     display = render_display(state)
