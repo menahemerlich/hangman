@@ -16,10 +16,15 @@ def validate_guess(ch: str, guesses: list[str]) -> tuple[bool, str]:
 def apply_guess(state: dict, ch: str) -> bool:
     if ch in state["secret"]:
         return False
+    state["guessed"].append(ch)
     state["wrong_guesses"] += 1
     state["max_tries"] -= 1
     return True
 
+def is_won(state: dict) -> bool:
+    if "_" in state["display"]:
+        return False
+    return True
 
 
 

@@ -1,6 +1,6 @@
 from data.words_list import words
 from hangman.words import choose_secret_word
-from hangman.game import init_state, validate_guess, apply_guess
+from hangman.game import init_state, validate_guess, apply_guess, is_won
 
 
 
@@ -10,3 +10,4 @@ validate_guess(ch, state["guessed"])
 print(state)
 print(apply_guess(state, ch))
 print(state)
+print(is_won(state))
